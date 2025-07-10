@@ -33,7 +33,7 @@ const Landing = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-10">
           <FadeIn delay={0.8}>
             <button className="px-8 py-3 border-2 border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition-colors">
-              LET'S CONNECT W/ ME
+              LET&apos;S CONNECT W/ ME
             </button>
           </FadeIn>
 

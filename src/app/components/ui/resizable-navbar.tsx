@@ -4,11 +4,11 @@ import { IconMenu2, IconX } from "@tabler/icons-react";
 import {
   motion,
   AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
 } from "motion/react";
+import Link from "next/link";
+import Image from "next/image";
 
-import React, { useRef, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -61,14 +61,9 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         setVisible(false);
       }
     };
-
-    // Initial check
+  
     handleScroll();
-
-    // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
-
-    // Cleanup
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -137,7 +132,7 @@ export const NavItems = ({
         const isHovered = hovered === idx;
 
         return (
-          <a
+          <Link
             key={`link-${idx}`}
             onMouseEnter={() => setHovered(idx)}
             onClick={() => onItemClick?.(item.link)}
@@ -176,7 +171,7 @@ export const NavItems = ({
             )}
 
             <span className="relative z-20">{item.name}</span>
-          </a>
+          </Link>
         );
       })}
     </motion.div>
@@ -270,18 +265,18 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <a
+    <Link
       href="/"
       className="relative z-20 mr-6 flex items-center space-x-3 px-1 py-2 text-lg font-normal text-black"
     >
-      <img
+      <Image
         src="https://assets.aceternity.com/logo-dark.png"
         alt="logo"
         width={40}
         height={40}
       />
       <span className="font-medium text-xl text-black">JOHN PAUL</span>
-    </a>
+    </Link>
   );
 };
 

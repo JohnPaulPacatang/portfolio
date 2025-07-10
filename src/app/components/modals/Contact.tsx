@@ -7,19 +7,27 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
-const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
-  const [formData, setFormData] = useState({
+interface FormData {
+  fullName: string;
+  email: string;
+  comment: string;
+}
+
+const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+  const [formData, setFormData] = useState<FormData>({
     fullName: "",
     email: "",
     comment: "",
   });
 
-  const handleInputChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Form submitted:", formData);
     onClose();
@@ -38,14 +46,14 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
         >
           <X size={22} />
         </button>
-   
+
         <div className="text-center">
           <h2 className="text-2xl font-bold">Get in Touch</h2>
           <p className="text-sm text-gray-600 mt-1">
             Reach out directly or send us a message below.
           </p>
         </div>
-        
+
         <div className="flex justify-center gap-5">
           <a href="#" className="hover:opacity-70" aria-label="Facebook">
             <Facebook size={20} />
@@ -57,7 +65,7 @@ const ContactModal = ({ isOpen, onClose }: ContactModalProps) => {
             <Linkedin size={20} />
           </a>
         </div>
-        
+
         <div className="flex flex-wrap justify-center gap-3">
           <a
             href="tel:4352221482"

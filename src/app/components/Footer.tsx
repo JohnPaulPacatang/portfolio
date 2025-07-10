@@ -75,7 +75,7 @@ const Footer = () => {
             <div className="text-gray-500 text-base sm:text-lg leading-relaxed max-w-md">
               <FadeIn>
                 <p>
-                  We're a creative studio shaping striking brand identities,
+                  We&apos;re a creative studio shaping striking brand identities,
                   immersive digital journeys, and unforgettable narratives.
                 </p>
                 <p className="mt-2">Rooted in the heart of creativity.</p>
