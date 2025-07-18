@@ -49,7 +49,7 @@ const TechStack = () => {
   ];
 
   return (
-    <div className="w-full space-y-8 p-4">
+    <div className="w-full space-y-8 py-4">
       <FadeIn>
         <h1 className="text-4xl font-bold text-black">Tech Stack</h1>
       </FadeIn>

@@ -2,6 +2,7 @@ import React from "react";
 import PrimaryButton from "./ui/PrimaryButton";
 import FadeIn from "@/app/components/animations/FadeIn";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const About = () => {
   return (
@@ -72,7 +73,9 @@ const About = () => {
                 </FadeIn>
 
                 <FadeIn>
-                  <PrimaryButton>More about me</PrimaryButton>
+                  <Link href="/about">
+                    <PrimaryButton className="cursor-pointer">More about me</PrimaryButton>
+                  </Link>
                 </FadeIn>
               </div>
             </div>

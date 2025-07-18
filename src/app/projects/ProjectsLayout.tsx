@@ -20,7 +20,7 @@ const ProjectsLayout: React.FC = () => {
         <div className="flex items-center justify-center my-8">
           <div className="w-full max-w-[90%] px-4 md:px-6 lg:px-8">
             <FadeIn>
-              <h1 className="text-[2rem] md:text-[4rem] lg:text-[6rem] text-left font-black leading-none tracking-tighter text-neutral-900 select-none">
+              <h1 className="text-[2rem] md:text-[4rem] lg:text-[6rem] text-left font-black leading-none tracking-tighter text-neutral-900 select-none uppercase">
                 Projects
               </h1>
             </FadeIn>
@@ -37,26 +37,26 @@ const ProjectsLayout: React.FC = () => {
                   >
                     <div className="max-w-7xl mx-auto flex justify-between items-center flex-col md:flex-row gap-8">
                       <div className="flex-1 text-center md:text-left">
-                        <div className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold transition-all duration-500 group-hover:text-neutral-600 group-hover:scale-105 group-hover:tracking-wider ">
+                        <div className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-800 to-black transition-all duration-500 group-hover:tracking-wider group-hover:scale-105 group-hover:opacity-90">
                           {project.title}
                         </div>
                       </div>
 
-                      <div className="text-center md:text-right text-lg md:text-base transform transition-all duration-500 group-hover:scale-105 group-hover:translate-x-2">
-                        <div className="transition-all duration-500">
-                          <div className="flex flex-wrap gap-2 justify-center md:justify-end">
-                            {project.techStack.map(
-                              (tech: string, i: number) => (
-                                <span
-                                  key={i}
-                                  className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 transition-colors duration-200"
-                                >
-                                  {tech}
-                                </span>
-                              )
-                            )}
-                          </div>
+                      <div className="flex-1 text-center md:text-right space-y-4 transition-all duration-500 group-hover:scale-105 group-hover:translate-x-2">
+                        <div className="flex flex-wrap gap-2 justify-center md:justify-end">
+                          {project.techStack.map((tech: string, i: number) => (
+                            <span
+                              key={i}
+                              className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 transition-colors duration-200"
+                            >
+                              {tech}
+                            </span>
+                          ))}
                         </div>
+
+                        <p className="text-sm md:text-base text-neutral-500 leading-relaxed max-w-md mx-auto md:ml-auto md:mr-0">
+                          {project.description}
+                        </p>
                       </div>
                     </div>
                     {hoveredProject === index && (

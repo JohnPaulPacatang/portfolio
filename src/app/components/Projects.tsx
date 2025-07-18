@@ -9,6 +9,7 @@ interface Project {
   techStack: string[];
   link: string;
   image: string;
+  description: string;
 }
 
 interface MousePosition {
@@ -30,30 +31,39 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
+      title: "Peso User",
+      techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
+      link: "https://peso-user.vercel.app/",
+      image: "/assets/peso-user.png",
+      description:
+        "An online job portal developed as part of our thesis to assist PESO North Caloocan in connecting jobseekers with local employers more efficiently.",
+    },
+    {
       title: "Peso Admin",
-      techStack: ["React", "Tailwind CSS", "Firebase"],
-      link: "https://example.com/project1",
+      techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
+      link: "https://peso-admin.vercel.app/",
       image: "/assets/peso-admin.png",
+      description:
+        "An admin dashboard developed as part of our thesis to help PESO North Caloocan manage job postings, employer accounts, and applicant data with ease and efficiency.",
     },
     {
-      title: "Project 2",
-      techStack: ["Next.js", "TypeScript", "MongoDB"],
-      link: "https://example.com/project2",
-      image: "/assets/peso-user.png",
+      title: "JDM Classics",
+      techStack: ["Next.js", "React", "Tailwind CSS", "Headless UI"],
+      link: "https://jdm-classics.vercel.app/",
+      image: "/assets/jdm.png",
+      description:
+        "A school project created as our first website using React. Showcases iconic JDM cars, highlighting classic models, specs, and their legacy.",
     },
     {
-      title: "Project 3",
-      techStack: ["Vue.js", "Vuetify", "Firebase"],
-      link: "https://example.com/project3",
-      image: "/assets/peso-admin.png",
-    },
-    {
-      title: "Project 4",
-      techStack: ["Angular", "SCSS", "Node.js"],
-      link: "https://example.com/project4",
-      image: "/assets/peso-user.png",
+      title: "Portfolio",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      link: "https://johnpaulpacatang.github.io/my-portfolio-v2/",
+      image: "/assets/oldportfolio.png",
+      description:
+        "My first personal portfolio showcasing web projects, skills, and experience as an aspiring front-end developer.",
     },
   ];
+  
 
   useEffect(() => {
     const animate = () => {
@@ -114,7 +124,7 @@ const Projects: React.FC = () => {
     <div className="flex items-center justify-center my-8">
       <div className="w-full max-w-[90%] px-4 md:px-6 lg:px-8">
         <FadeIn>
-          <h1 className="text-[2rem] md:text-[4rem] lg:text-[6rem] text-left font-black leading-none tracking-tighter text-neutral-900 select-none uppercase">
+          <h1 className="text-[2rem] md:text-[4rem] lg:text-[6rem] py-10 text-left font-black leading-none tracking-tighter text-neutral-900 select-none uppercase">
             Projects
           </h1>
         </FadeIn>
@@ -131,24 +141,26 @@ const Projects: React.FC = () => {
               >
                 <div className="max-w-7xl mx-auto flex justify-between items-center flex-col md:flex-row gap-8">
                   <div className="flex-1 text-center md:text-left">
-                    <div className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-semibold transition-all duration-500 group-hover:text-neutral-600 group-hover:scale-105 group-hover:tracking-wider ">
+                    <div className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-800 to-black transition-all duration-500 group-hover:tracking-wider group-hover:scale-105 group-hover:opacity-90">
                       {project.title}
                     </div>
                   </div>
 
-                  <div className="text-center md:text-right text-lg md:text-base transform transition-all duration-500 group-hover:scale-105 group-hover:translate-x-2">
-                    <div className="transition-all duration-500">
-                      <div className="flex flex-wrap gap-2 justify-center md:justify-end">
-                        {project.techStack.map((tech: string, i: number) => (
-                          <span
-                            key={i}
-                            className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 transition-colors duration-200"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                  <div className="flex-1 text-center md:text-right space-y-4 transition-all duration-500 group-hover:scale-105 group-hover:translate-x-2">
+                    <div className="flex flex-wrap gap-2 justify-center md:justify-end">
+                      {project.techStack.map((tech: string, i: number) => (
+                        <span
+                          key={i}
+                          className="inline-flex items-center px-3 py-1.5 rounded-full text-sm font-medium bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 transition-colors duration-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
+
+                    <p className="text-sm md:text-base text-neutral-500 leading-relaxed max-w-md mx-auto md:ml-auto md:mr-0">
+                      {project.description}
+                    </p>
                   </div>
                 </div>
 
@@ -188,7 +200,8 @@ const Projects: React.FC = () => {
                           padding={50}
                           disabled={false}
                           magnetStrength={1}
-                          onClick={() => handleViewClick(project.link)}>
+                          onClick={() => handleViewClick(project.link)}
+                        >
                           View
                         </Magnet>
                       </div>

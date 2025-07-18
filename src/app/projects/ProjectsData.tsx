@@ -6,6 +6,7 @@ export interface Project {
   techStack: string[];
   link: string;
   image: string;
+  description: string;
 }
 
 interface MousePosition {
@@ -42,28 +43,60 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
 
   const projects: Project[] = [
     {
+      title: "Peso User",
+      techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
+      link: "https://peso-user.vercel.app/",
+      image: "/assets/peso-user.png",
+      description:
+        "An online job portal developed as part of our thesis to assist PESO North Caloocan in connecting jobseekers with local employers more efficiently.",
+    },
+    {
       title: "Peso Admin",
-      techStack: ["React", "Tailwind CSS", "Firebase"],
-      link: "https://example.com/project1",
+      techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
+      link: "https://peso-admin.vercel.app/",
       image: "/assets/peso-admin.png",
+      description:
+        "An admin dashboard developed as part of our thesis to help PESO North Caloocan manage job postings, employer accounts, and applicant data with ease and efficiency.",
     },
     {
-      title: "Project 2",
-      techStack: ["Next.js", "TypeScript", "MongoDB"],
-      link: "https://example.com/project2",
-      image: "/assets/peso-user.png",
+      title: "JDM Classics",
+      techStack: ["Next.js", "React", "Tailwind CSS", "Headless UI"],
+      link: "https://jdm-classics.vercel.app/",
+      image: "/assets/jdm.png",
+      description:
+        "A school project created as our first website using React. Showcases iconic JDM cars, highlighting classic models, specs, and their legacy.",
     },
     {
-      title: "Project 3",
-      techStack: ["Vue.js", "Vuetify", "Firebase"],
-      link: "https://example.com/project3",
-      image: "/assets/peso-admin.png",
+      title: "Portfolio",
+      techStack: ["HTML", "CSS", "JavaScript"],
+      link: "https://johnpaulpacatang.github.io/my-portfolio-v2/",
+      image: "/assets/oldportfolio.png",
+      description:
+        "My first personal portfolio showcasing web projects, skills, and experience as an aspiring front-end developer.",
     },
     {
-      title: "Project 4",
-      techStack: ["Angular", "SCSS", "Node.js"],
-      link: "https://example.com/project4",
-      image: "/assets/peso-user.png",
+      title: "SmileBox",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://smileboxstudioph.com/",
+      image: "/assets/smilebox.png",
+      description:
+        "One of the projects I handled as a web developer intern at GCWE Web Experts, highlighting my UI/UX and web development skills.",
+    },
+    {
+      title: "Virtual Outsourcing Solution",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://virtualoutsourcingsolution.com/",
+      image: "/assets/vos.png",
+      description:
+        "One of the projects I handled as a web developer intern at GCWE Web Experts, showcasing my ability to create professional and functional websites.",
+    },
+    {
+      title: "VTSA International Inc.",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://vtsalifts.com/",
+      image: "/assets/vtsa.png",
+      description:
+        "One of the projects I handled as a web developer intern at GCWE Web Experts, demonstrating my skills in developing responsive and user-friendly websites.",
     },
   ];
 
@@ -119,7 +152,7 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
   };
 
   const handleViewClick = (link: string) => {
-    window.open(link, '_blank');
+    window.open(link, "_blank");
   };
 
   return (

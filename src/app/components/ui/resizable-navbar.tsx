@@ -7,8 +7,9 @@ import {
 } from "motion/react";
 import Link from "next/link";
 import Image from "next/image";
-
 import React, { useState, useEffect } from "react";
+
+
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -51,8 +52,7 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const [visible, setVisible] = useState<boolean>(false);
-
-  // Add window scroll event listener
+  
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -269,7 +269,7 @@ export const NavbarLogo = () => {
       className="relative z-20 mr-6 flex items-center space-x-3 px-1 py-2 text-lg font-normal text-black"
     >
       <Image
-        src="https://assets.aceternity.com/logo-dark.png"
+        src="/assets/logo.png" 
         alt="logo"
         width={40}
         height={40}

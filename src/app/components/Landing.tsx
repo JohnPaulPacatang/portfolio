@@ -10,21 +10,21 @@ const Landing = () => {
         <div className="flex-grow flex flex-col justify-center">
           <FadeIn delay={0}>
             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black tracking-tight leading-[0.9]">
-              Designing the
+              Building the
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black tracking-tight leading-[0.9]">
-              future, one pixel
+              web, one line
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.6}>
             <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black tracking-tight leading-[0.9]">
               at a time.
-              <span className="inline-block ml-3 mt-3 border border-black rounded-full p-1">
-                <ArrowUpRight size={85} className="text-black" />
+              <span className="inline-block ml-2 sm:ml-3 mt-2 sm:mt-3 border border-black rounded-full p-1 sm:p-2">
+                <ArrowUpRight className="text-black w-6 h-6 sm:w-20 sm:h-20" />
               </span>
             </h1>
           </FadeIn>
@@ -33,17 +33,16 @@ const Landing = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-10">
           <FadeIn delay={0.8}>
             <button className="px-8 py-3 border-2 border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition-colors">
-              LET&apos;S CONNECT W/ ME
+              LET&apos;S BUILD SOMETHING TOGETHER
             </button>
           </FadeIn>
 
           <div className="text-sm font-medium uppercase text-black tracking-wider leading-snug md:text-right">
             <FadeIn delay={0.8}>
-              <p>CRAFTING DIGITAL PRODUCT SUCH AS WEBSITE &</p>
-              <p>MOBILE APP DESIGN, BRAND IDENTITY, UI/UX,</p>
-              <p>INTERACTION DESIGN & WEBFLOW</p>
-              <p>DEVELOPMENT.</p>
-            </FadeIn>         
+              <p>I design and build websites that look good and work well.</p>
+              <p>Clean layouts, smooth interactions, and thoughtful details.</p>
+              <p>Just trying to make the web a little nicer.</p>
+            </FadeIn>
           </div>
         </div>
       </div>

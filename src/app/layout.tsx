@@ -12,7 +12,11 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "John Paul Pacatang - Portfolio",
-  description: "A portfolio showcasing my skills, projects, and journey as a software developer.",
+  description:
+    "A portfolio showcasing my skills, projects, and journey as a software developer.",
+  icons: {
+    icon: "/assets/JP.png",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +27,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${dmSans.variable} antialiased`}>
-        <SmoothScrollProvider >
+        <SmoothScrollProvider>
           <ResizeNavbar />
-          <div>
-            {children}
-          </div>
+          <main>{children}</main>
           <Footer />
         </SmoothScrollProvider>
       </body>

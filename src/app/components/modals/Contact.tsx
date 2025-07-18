@@ -7,38 +7,21 @@ interface ContactModalProps {
   onClose: () => void;
 }
 
-interface FormData {
-  fullName: string;
-  email: string;
-  comment: string;
-}
-
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  const [formData, setFormData] = useState<FormData>({
-    fullName: "",
-    email: "",
-    comment: "",
-  });
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const [email, setEmail] = useState("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+    console.log("Email submitted:", email);
     onClose();
-    setFormData({ fullName: "", email: "", comment: "" });
+    setEmail("");
   };
 
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center px-4">
-      <div className="bg-white text-black rounded-xl w-full max-w-xl p-6 relative shadow-xl space-y-6">
+      <div className="bg-white text-black rounded-xl w-full max-w-lg p-6 relative shadow-xl space-y-6">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-black transition-colors"
@@ -50,7 +33,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         <div className="text-center">
           <h2 className="text-2xl font-bold">Get in Touch</h2>
           <p className="text-sm text-gray-600 mt-1">
-            Reach out directly or send us a message below.
+            Reach out directly or drop your email below.
           </p>
         </div>
 
@@ -83,44 +66,21 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           </a>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input
-              type="text"
-              name="fullName"
-              placeholder="Full Name"
-              value={formData.fullName}
-              onChange={handleInputChange}
-              required
-              className="w-full bg-transparent border-b border-gray-300 focus:outline-none focus:border-black py-2 placeholder-gray-500 text-sm"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleInputChange}
-              required
-              className="w-full bg-transparent border-b border-gray-300 focus:outline-none focus:border-black py-2 placeholder-gray-500 text-sm"
-            />
-          </div>
-          <textarea
-            name="comment"
-            placeholder="Your message (optional)"
-            value={formData.comment}
-            onChange={handleInputChange}
-            rows={4}
-            className="w-full bg-transparent border-b border-gray-300 focus:outline-none focus:border-black py-2 placeholder-gray-500 text-sm resize-none"
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 items-center">
+          <input
+            type="email"
+            placeholder="Your email address"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full flex-1 rounded-full border border-gray-300 py-2 px-4 text-sm placeholder-gray-500 focus:outline-none focus:border-black"
           />
-
-          <div className="text-right">
-            <button
-              type="submit"
-              className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition-colors"
-            >
-              Send Message
-            </button>
-          </div>
+          <button
+            type="submit"
+            className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition-colors whitespace-nowrap"
+          >
+            Let’s Connect
+          </button>
         </form>
       </div>
     </div>

@@ -1,28 +1,34 @@
 export const certificatesData = [
   {
-    title: "React Developer Certification",
-    issuer: "Meta",
-  },
-  {
-    title: "JavaScript Fundamentals",
+    title: "Responsive Web Design",
     issuer: "FreeCodeCamp",
+    pathfile:
+      "https://www.freecodecamp.org/certification/johnpaulpacatang/responsive-web-design",
   },
   {
-    title: "Web Development Bootcamp",
-    issuer: "Udemy",
+    title: "Legacy Javascript Algorithms and Data Structure",
+    issuer: "FreeCodeCamp",
+    pathfile:
+      "https://www.freecodecamp.org/certification/johnpaulpacatang/javascript-algorithms-and-data-structures",
   },
   {
-    title: "Node.js Certification",
-    issuer: "OpenJS Foundation",
-    date: "2024",
-    pathfile: "/certificates/nodejs-cert.pdf"
+    title: "Programming Essentials in C++",
+    issuer: "AMA Computer University",
+    pathfile: "/assets/c++.png",
   },
   {
-    title: "AWS Cloud Practitioner",
-    issuer: "Amazon Web Services",
+    title: "Advance Programming in C++",
+    issuer: "AMA Computer University",
+    pathfile: "/assets/advance c++.png",
   },
   {
-    title: "MongoDB Developer",
-    issuer: "MongoDB University",
-  }
+    title: "Artificial Intelligence and Ethical Hacking",
+    issuer: "St.Clare College of Caloocan",
+    pathfile: "/assets/ai.png",
+  },
+  {
+    title: "Cyber Security",
+    issuer: "St.Clare College of Caloocan",
+    pathfile: "/assets/CCI05272025_0001.jpg",
+  },
 ];
