@@ -91,7 +91,7 @@ const Footer = () => {
           <div className="text-gray-600 leading-relaxed text-base sm:text-lg">
             <FadeIn delay={0.2}>
               <p>
-                Hi, I’m a web developer passionate about building clean,
+                Hi, I&apos;m a web developer passionate about building clean,
                 responsive, and accessible websites. I enjoy turning ideas into
                 reality with code.
               </p>
