@@ -96,7 +96,7 @@ const Footer = () => {
                 reality with code.
               </p>
               <p className="mt-3">
-                Whether you're a business or a collaborator, let's create
+                Whether you&apos;re a business or a collaborator, let's create
                 something meaningful together.
               </p>
             </FadeIn>
