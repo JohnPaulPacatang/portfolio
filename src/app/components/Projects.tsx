@@ -3,6 +3,8 @@ import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import FadeIn from "@/app/components/animations/FadeIn";
 import Magnet from "@/app/components/ui/Magnet";
+import Link from "next/link";
+import PrimaryButton from "@/app/components/ui/PrimaryButton";
 
 interface Project {
   title: string;
@@ -63,7 +65,6 @@ const Projects: React.FC = () => {
         "My first personal portfolio showcasing web projects, skills, and experience as an aspiring front-end developer.",
     },
   ];
-  
 
   useEffect(() => {
     const animate = () => {
@@ -212,6 +213,11 @@ const Projects: React.FC = () => {
             </FadeIn>
           ))}
         </div>
+        <FadeIn>
+          <Link className="flex justify-center " href="/projects">
+            <PrimaryButton className="cursor-pointer">View more</PrimaryButton>
+          </Link>
+        </FadeIn>
       </div>
     </div>
   );

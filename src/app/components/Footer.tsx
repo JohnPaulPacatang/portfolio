@@ -15,6 +15,7 @@ const Footer = () => {
   return (
     <footer className="w-full py-8 sm:py-12">
       <div className="max-w-[95%] sm:max-w-[90%] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-px bg-gray-200 w-full my-10"></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 sm:gap-16">
           <div className="space-y-6">
             <FadeIn>
@@ -96,8 +97,8 @@ const Footer = () => {
                 reality with code.
               </p>
               <p className="mt-3">
-                Whether you&apos;re a business or a collaborator, let&apos;s create
-                something meaningful together.
+                Whether you&apos;re a business or a collaborator, let&apos;s
+                create something meaningful together.
               </p>
             </FadeIn>
           </div>
