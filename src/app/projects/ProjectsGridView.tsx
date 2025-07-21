@@ -17,11 +17,11 @@ const ProjectsGridView: React.FC<GridViewProps> = ({ projects }) => {
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-neutral-100 p-6 rounded-lg hover:shadow-xl transition relative group cursor-pointer block"
+          className="bg-neutral-100 p-4 lg:p-6 rounded-lg hover:shadow-xl transition relative group cursor-pointer block"
         >
           <div
             key={index}
-            className="bg-neutral-100 p-6 rounded-lg hover:shadow-xl transition relative group cursor-pointer"
+            className="bg-neutral-100 lg:p-6 rounded-lg transition relative cursor-pointer"
           >
             <div className="relative w-full h-48 mb-4">
               <Image

@@ -33,7 +33,7 @@ const ProjectsListView: React.FC<ListViewProps> = ({
           onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="mx-28 flex justify-between items-center flex-col md:flex-row gap-8">
+          <div className="md:mx-4 xl:mx-28 flex justify-between items-center flex-col md:flex-row gap-8">
             <div className="flex-1 text-center md:text-left">
               <div className="text-xl md:text-[2rem] lg:text-[3rem] font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-800 to-black transition-all duration-500 group-hover:tracking-wider group-hover:scale-105 group-hover:opacity-90">
                 {project.title}
