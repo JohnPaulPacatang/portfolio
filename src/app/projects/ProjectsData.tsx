@@ -43,7 +43,7 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
 
   const projects: Project[] = [
     {
-      title: "Peso User",
+      title: "PESO User",
       techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
       link: "https://peso-user.vercel.app/",
       image: "/assets/peso-user.png",
@@ -51,7 +51,7 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
         "An online job portal developed as part of our thesis to assist PESO North Caloocan in connecting jobseekers with local employers more efficiently.",
     },
     {
-      title: "Peso Admin",
+      title: "PESO Admin",
       techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
       link: "https://peso-admin.vercel.app/",
       image: "/assets/peso-admin.png",
@@ -80,7 +80,7 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
       link: "https://smileboxstudioph.com/",
       image: "/assets/smilebox.png",
       description:
-        "One of the projects I handled as a web developer intern at GCWE Web Experts, highlighting my UI/UX and web development skills.",
+        "Contributed to a creative site as an intern at GCWE Web Experts.",
     },
     {
       title: "Virtual Outsourcing Solution",
@@ -88,7 +88,7 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
       link: "https://virtualoutsourcingsolution.com/",
       image: "/assets/vos.png",
       description:
-        "One of the projects I handled as a web developer intern at GCWE Web Experts, showcasing my ability to create professional and functional websites.",
+        "Assisted in developing a business site during my GCWE internship.",
     },
     {
       title: "VTSA International Inc.",
@@ -96,7 +96,71 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
       link: "https://vtsalifts.com/",
       image: "/assets/vtsa.png",
       description:
-        "One of the projects I handled as a web developer intern at GCWE Web Experts, demonstrating my skills in developing responsive and user-friendly websites.",
+        "Helped create a responsive website at GCWE Web Experts.",
+    },
+    {
+      title: "CEC Construction Corporation",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://www.cec.com.ph/",
+      image: "/assets/ceccc.png",
+      description:
+        "Supported the development of a corporate site at GCWE.",
+    },
+    {
+      title: "Doña Alejandra, Inc",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://dai-solutions.ph/",
+      image: "/assets/dai.png",
+      description:
+        "Contributed to building a clean business site at GCWE.",
+    },
+    {
+      title: "G.L. Dizon Construction Services",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://gldizonconstructionservices.com/",
+      image: "/assets/gldizon.png",
+      description:
+        "Assisted in crafting a responsive site during my GCWE internship.",
+    },
+    {
+      title: "Greenridge Resort",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://greenridgeresort.com/",
+      image: "/assets/greenridge.png",
+      description:
+        "Helped design a resort website at GCWE Web Experts.",
+    },
+    {
+      title: "Mega-Re International INC.",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://megare.net.ph/",
+      image: "/assets/megare.png",
+      description:
+        "Contributed to a company site while interning at GCWE.",
+    },
+    {
+      title: "Riconnect Virtual Assistance Services",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://www.riconnect.agency/",
+      image: "/assets/riconnect.png",
+      description:
+        "Supported the creation of a service site at GCWE.",
+    },
+    {
+      title: "ADT Dental Clinic",
+      techStack: ["WordPress", "Slider Revolution", "wpBakery"],
+      link: "https://adtdentalclinic.com/",
+      image: "/assets/adt.png",
+      description:
+        "Assisted in launching a clinic site during my GCWE internship.",
+    },
+    {
+      title: "St. Clare College of Caloocan Library Management System",
+      techStack: ["React", "Supabase", "Tailwind"],
+      link: "https://library-app-ditabis.vercel.app/",
+      image: "/assets/library.png",
+      description:
+        "A library management system developed for St. Clare College of Caloocan, allowing students to manage their library accounts, search for books, and view borrowing history.",
     },
   ];
 

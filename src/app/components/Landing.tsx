@@ -6,25 +6,27 @@ import FadeIn from "@/app/components/animations/FadeIn";
 const Landing = () => {
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="w-full max-w-[90%] flex flex-col justify-between h-screen py-16 px-4 md:px-6 lg:px-8">
-        <div className="flex-grow flex flex-col justify-center">
+      <div className="w-full max-w-[90%] flex flex-col justify-between h-screen py-10 px-4 md:px-6 lg:px-8">
+        <div className="flex-grow flex flex-col justify-center text-black">
           <FadeIn delay={0}>
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black tracking-tight leading-[0.9]">
-              Building the
+            <h1 className="text-5xl md:text-7xl lg:text-[6rem] 2xl:text-[10rem] font-black tracking-tight leading-[0.9] flex items-center md:gap-4 flex-wrap">
+              PR
+              <span className="inline-block w-24 md:w-40 lg:w-56 h-10 md:h-16 lg:h-20 xl:h-28 border-8 border-black rounded-full" />
+              GRESS,
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black tracking-tight leading-[0.9]">
-              web, one line
+            <h1 className="text-5xl md:text-7xl lg:text-[6rem] 2xl:text-[10rem] font-black tracking-tight leading-[0.9] flex items-center gap-4 flex-wrap">
+              ONE PURPOSEFUL
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.6}>
-            <h1 className="text-6xl md:text-8xl lg:text-[10rem] font-bold text-black tracking-tight leading-[0.9]">
-              at a time.
-              <span className="inline-block ml-2 sm:ml-3 mt-2 sm:mt-3 border border-black rounded-full p-1 sm:p-2">
-                <ArrowUpRight className="text-black w-6 h-6 sm:w-20 sm:h-20" />
+            <h1 className="text-5xl md:text-7xl lg:text-[6rem] 2xl:text-[10rem] font-black tracking-tight leading-[0.9] flex items-center md:gap- flex-wrap">
+              STEP AT A TIME
+              <span className="hidden md:ml-3 border border-black rounded-full p-2 md:block">
+                <ArrowUpRight className="text-black w-6 h-6 sm:w-7 sm:h-7 md:w-10 md:h-10 2xl:w-24 2xl:h-24" />
               </span>
             </h1>
           </FadeIn>
@@ -37,11 +39,11 @@ const Landing = () => {
             </button>
           </FadeIn>
 
-          <div className="text-sm font-medium uppercase text-black tracking-wider leading-snug md:text-right">
+          <div className="text-xs font-medium uppercase text-black tracking-wider leading-snug text-right lg:text-sm">
             <FadeIn delay={0.8}>
-              <p>I design and build websites that look good and work well.</p>
-              <p>Clean layouts, smooth interactions, and thoughtful details.</p>
-              <p>Just trying to make the web a little nicer.</p>
+              <p>I design and build thoughtful, useful websites.</p>
+              <p>Clean layouts, smooth interactions, and sharp details.</p>
+              <p>Making the web better, one project at a time.</p>
             </FadeIn>
           </div>
         </div>

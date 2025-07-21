@@ -31,7 +31,7 @@ const Projects: React.FC = () => {
 
   const projects: Project[] = [
     {
-      title: "Peso User",
+      title: "PESO User",
       techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
       link: "https://peso-user.vercel.app/",
       image: "/assets/peso-user.png",
@@ -39,7 +39,7 @@ const Projects: React.FC = () => {
         "An online job portal developed as part of our thesis to assist PESO North Caloocan in connecting jobseekers with local employers more efficiently.",
     },
     {
-      title: "Peso Admin",
+      title: "PESO Admin",
       techStack: ["React", "Tailwind CSS", "Firebase", "Cloudinary", "EmailJS"],
       link: "https://peso-admin.vercel.app/",
       image: "/assets/peso-admin.png",
@@ -131,7 +131,7 @@ const Projects: React.FC = () => {
 
         <div className="my-8">
           {projects.map((project: Project, index: number) => (
-            <FadeIn key={index} delay={index * 0.1}>
+            <FadeIn key={index} delay={index * 0.01}>
               <div
                 key={index}
                 className="border-t border-neutral-400 w-full py-16 relative cursor-pointer transition-all duration-500  group"
@@ -139,9 +139,9 @@ const Projects: React.FC = () => {
                 onMouseEnter={() => handleMouseEnter(index)}
                 onMouseLeave={handleMouseLeave}
               >
-                <div className="max-w-7xl mx-auto flex justify-between items-center flex-col md:flex-row gap-8">
+                <div className="md:mx-4 xl:mx-28 flex justify-between items-center flex-col md:flex-row gap-8">
                   <div className="flex-1 text-center md:text-left">
-                    <div className="text-[2rem] md:text-[3rem] lg:text-[4rem] font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-800 to-black transition-all duration-500 group-hover:tracking-wider group-hover:scale-105 group-hover:opacity-90">
+                    <div className="text-xl md:text-[2rem] lg:text-[3rem] font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-neutral-800 to-black transition-all duration-500 group-hover:tracking-wider group-hover:scale-105 group-hover:opacity-90">
                       {project.title}
                     </div>
                   </div>

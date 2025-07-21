@@ -6,7 +6,6 @@ import {
   AnimatePresence,
 } from "motion/react";
 import Link from "next/link";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
 
@@ -264,17 +263,8 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <Link
-      href="/"
-      className="relative z-20 mr-6 flex items-center space-x-3 px-1 py-2 text-lg font-normal text-black"
-    >
-      <Image
-        src="/assets/logo.png" 
-        alt="logo"
-        width={40}
-        height={40}
-      />
-      <span className="font-medium text-xl text-black">JOHN PAUL</span>
+    <Link href="/" className="relative z-20 mr-6 flex items-center space-x-3 px-1 py-2 text-lg font-normal text-black">
+      <span className="text-4xl text-black font-black italic">JP</span>
     </Link>
   );
 };

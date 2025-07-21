@@ -24,7 +24,7 @@ export default function FadeIn({
       initial={{ opacity: 0, y: yOffset }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration, delay }}
-      viewport={{ once, amount: 0.3 }} 
+      viewport={{ once, amount: 0.1 }} 
       className={className}
     >
       {children}

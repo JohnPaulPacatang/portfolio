@@ -36,14 +36,13 @@ export function ResizeNavbar() {
 
   const handleContactClick = () => {
     setIsContactModalOpen(true);
-    setIsMobileMenuOpen(false); // Close mobile menu when opening modal
+    setIsMobileMenuOpen(false); 
   };
 
   return (
     <>
       <div className="fixed top-0 w-full z-40">
         <Navbar className="py-2">
-          {/* Desktop Navigation */}
           <NavBody className="py-1 px-8">
             <NavbarLogo />
             <NavItems 
@@ -62,7 +61,6 @@ export function ResizeNavbar() {
             </div>
           </NavBody>
 
-          {/* Mobile Navigation */}
           <MobileNav className="py-1 px-6">
             <MobileNavHeader className="py-2">
               <NavbarLogo />
@@ -101,7 +99,6 @@ export function ResizeNavbar() {
         </Navbar>
       </div>
 
-      {/* Contact Modal */}
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={() => setIsContactModalOpen(false)} 
