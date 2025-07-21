@@ -57,8 +57,17 @@ const ProjectsLayout: React.FC = () => {
               </div>
             </FadeIn>
 
-            <div className="my-8">
-              {viewMode === "list" ? (
+            <div className="relative my-8">
+              {/* List View */}
+              <div className={`
+                  transition-all duration-500 ease-in-out
+                  ${
+                    viewMode === "list"
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95 absolute inset-0 pointer-events-none"
+                  }
+                `}
+              >
                 <ProjectsListView
                   projects={projects}
                   hoveredProject={hoveredProject}
@@ -68,9 +77,20 @@ const ProjectsLayout: React.FC = () => {
                   handleMouseLeave={handleMouseLeave}
                   handleViewClick={handleViewClick}
                 />
-              ) : (
+              </div>
+
+              {/* Grid View */}
+              <div className={`
+                  transition-all duration-500 ease-in-out
+                  ${
+                    viewMode === "grid"
+                      ? "opacity-100 scale-100"
+                      : "opacity-0 scale-95 absolute inset-0 pointer-events-none"
+                  }
+                `}
+              >
                 <ProjectsGridView projects={projects} />
-              )}
+              </div>
             </div>
           </div>
         </div>

@@ -32,14 +32,14 @@ const Landing = () => {
           </FadeIn>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full gap-10">
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end w-full gap-10 text-center md:text-right">
           <FadeIn delay={0.8}>
-            <button className="px-8 py-3 border-2 border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition-colors">
+            <button className="px-5 py-2 text-sm md:px-8 md:py-3 md:text-base border-2 border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition-colors">
               LET&apos;S BUILD SOMETHING TOGETHER
             </button>
           </FadeIn>
 
-          <div className="text-xs font-medium uppercase text-black tracking-wider leading-snug text-right lg:text-sm">
+          <div className="text-xs lg:text-sm font-medium uppercase text-black tracking-wider leading-snug">
             <FadeIn delay={0.8}>
               <p>I design and build thoughtful, useful websites.</p>
               <p>Clean layouts, smooth interactions, and sharp details.</p>

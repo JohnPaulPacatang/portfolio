@@ -21,7 +21,7 @@ const ProjectsGridView: React.FC<GridViewProps> = ({ projects }) => {
         >
           <div
             key={index}
-            className="bg-neutral-100 lg:p-6 rounded-lg transition relative cursor-pointer"
+            className="bg-neutral-100 lg:p-4 rounded-lg transition relative cursor-pointer"
           >
             <div className="relative w-full h-48 mb-4">
               <Image
