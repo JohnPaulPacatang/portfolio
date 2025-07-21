@@ -5,9 +5,9 @@ import FadeIn from "@/app/components/animations/FadeIn";
 
 const Landing = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen">
-      <div className="w-full max-w-[90%] flex flex-col justify-between h-screen py-10 px-4 md:px-6 lg:px-8">
-        <div className="flex-grow flex flex-col justify-center text-black">
+    <div className="flex justify-center items-center my-24 md:min-h-screen md:my-0">
+      <div className="w-full max-w-[90%] flex flex-col justify-between md:h-screen py-10 px-4 md:px-6 lg:px-8">
+        <div className="flex-grow flex flex-col justify-center text-black pb-20">
           <FadeIn delay={0}>
             <h1 className="text-5xl md:text-7xl lg:text-[6rem] 2xl:text-[10rem] font-black tracking-tight leading-[0.9] flex items-center md:gap-4 flex-wrap">
               PR
