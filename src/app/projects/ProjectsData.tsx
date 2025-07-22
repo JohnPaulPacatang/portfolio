@@ -19,10 +19,7 @@ interface ProjectsDataProps {
     projects: Project[];
     hoveredProject: number | null;
     displayPosition: MousePosition;
-    handleMouseMove: (
-      e: React.MouseEvent<HTMLDivElement>,
-      index: number
-    ) => void;
+    handleMouseMove: (e: React.MouseEvent<HTMLDivElement>,index: number) => void;
     handleMouseEnter: (index: number) => void;
     handleMouseLeave: () => void;
     handleViewClick: (link: string) => void;
@@ -74,7 +71,7 @@ const ProjectsData: React.FC<ProjectsDataProps> = ({ children }) => {
       description:
         "My first personal portfolio showcasing web projects, skills, and experience as an aspiring front-end developer.",
     },
-    {
+     {
       title: "SmileBox",
       techStack: ["WordPress", "Slider Revolution", "wpBakery"],
       link: "https://smileboxstudioph.com/",

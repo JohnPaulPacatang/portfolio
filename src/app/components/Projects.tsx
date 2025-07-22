@@ -64,6 +64,7 @@ const Projects: React.FC = () => {
       description:
         "My first personal portfolio showcasing web projects, skills, and experience as an aspiring front-end developer.",
     },
+    
   ];
 
   useEffect(() => {
