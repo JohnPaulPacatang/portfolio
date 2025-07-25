@@ -52,18 +52,15 @@ const About = () => {
                 </div>
 
                 <FadeIn>
-                  <a
-                    href="/cv.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-2 border-2 border-black rounded-full text-sm font-medium transition hover:bg-black hover:text-white"
-                  >
-                    View CV <ArrowRight className="w-4 h-4" />
-                  </a>
+                  <Link href="/about" target="_blank" rel="noopener noreferrer">
+                    <PrimaryButton className="cursor-pointer">
+                      More about me
+                    </PrimaryButton>
+                  </Link>
                 </FadeIn>
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-4">
                 <FadeIn>
                   <p className="text-lg font-light leading-relaxed text-neutral-600">
                     Every project pushes boundaries while staying true to its
@@ -73,8 +70,13 @@ const About = () => {
                 </FadeIn>
 
                 <FadeIn>
-                  <Link href="/about">
-                    <PrimaryButton className="cursor-pointer">More about me</PrimaryButton>
+                  <Link
+                    href="/cv.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-2 border-2 border-black rounded-full text-sm font-medium transition hover:bg-black hover:text-white"
+                  >
+                    View CV <ArrowRight className="w-4 h-4" />
                   </Link>
                 </FadeIn>
               </div>
@@ -95,7 +97,7 @@ const About = () => {
 
                 <div className="absolute -right-4 top-1/2 transform -translate-y-1/2 rotate-90 origin-center">
                   <span className="text-xs font-mono tracking-[0.3em] text-neutral-400 whitespace-nowrap">
-                    DESIGNER × DEVELOPER
+                    DESIGNER x DEVELOPER
                   </span>
                 </div>
               </FadeIn>

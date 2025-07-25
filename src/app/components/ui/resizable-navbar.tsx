@@ -1,14 +1,9 @@
 "use client";
 import { cn } from "@/app/lib/utils";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import {
-  motion,
-  AnimatePresence,
-} from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-
-
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -51,7 +46,7 @@ interface MobileNavMenuProps {
 
 export const Navbar = ({ children, className }: NavbarProps) => {
   const [visible, setVisible] = useState<boolean>(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -60,7 +55,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         setVisible(false);
       }
     };
-  
+
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -263,8 +258,18 @@ export const MobileNavToggle = ({
 
 export const NavbarLogo = () => {
   return (
-    <Link href="/" className="relative z-20 mr-6 flex items-center space-x-3 px-1 py-2 text-lg font-normal text-black">
-      <span className="text-4xl text-black font-black italic">JP</span>
+    <Link
+      href="/"
+      className="relative z-20 mr-6 flex items-center space-x-3 px-1 py-2 text-lg  text-black"
+    >
+      <div className="flex items-center px-2 py-1 cursor-pointer group">
+        <div className="flex items-center space-x-2">
+          <span className="logo-font text-2xl text-black font-semibold transition-all duration-300 ease-in-out group-hover:font-black">
+            JOHNPAUL
+          </span>
+          <div className="h-[2px] w-0 bg-black opacity-0 transition-all duration-500 ease-in-out group-hover:w-6 group-hover:opacity-100 group-hover:rounded-full" />
+        </div>
+      </div>
     </Link>
   );
 };

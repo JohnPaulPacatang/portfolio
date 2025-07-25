@@ -17,7 +17,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   return (
     <button
       type={type}
-      className={`flex items-center gap-2 px-8 py-3 border-2 border-black text-black font-medium rounded-full hover:bg-black hover:text-white transition-colors group ${className}`}
+      className={`flex items-center gap-2 px-6 py-2 border-2 border-black text-black font-medium rounded-3xl hover:bg-black hover:text-white transition-colors group ${className}`}
     >
       <span>{children}</span>
       {icon && (

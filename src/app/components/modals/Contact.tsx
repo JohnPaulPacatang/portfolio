@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import { X, Phone, Mail, Facebook, Github, Linkedin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -9,14 +11,54 @@ interface ContactModalProps {
 
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Email submitted:", email);
-    onClose();
-    setEmail("");
+  const handleConnect = async () => {
+    if (!email) {
+      toast.error("Please enter your email address");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setIsLoading(true);
+
+    const emailPromise = emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      {
+        to_email: email,
+        from_name: "John Paul Pacatang",
+        reply_to: "johnpaulpacatang1@gmail.com",
+      },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    );
+
+    toast.promise(emailPromise, {
+      loading: "Sending welcome email...",
+      success: "Thanks for connecting! Check your email for a welcome message.",
+      error: "Failed to send email. Please try again or contact me directly.",
+    });
+
+    try {
+      await emailPromise;
+      setEmail("");
+    } catch (error) {
+      console.error("EmailJS error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
+  const handleKeyPress = (e: { key: string }) => {
+    if (e.key === "Enter") {
+      handleConnect();
+    }
+  };
   if (!isOpen) return null;
 
   return (
@@ -58,28 +100,34 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             <span>435-222-1482</span>
           </a>
           <a
-            href="mailto:info@saulrhandarchitecture.com"
+            href="mailto:johnpaulpacatang1@gmail.com"
             className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-full bg-black text-white border border-black hover:bg-white hover:text-black transition-colors"
           >
             <Mail size={16} />
-            <span>info@saulrhandarchitecture.com</span>
+            <span>johnpaulpacatang1@gmail.com</span>
           </a>
         </div>
 
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 items-center">
+        <form className="flex flex-col sm:flex-row gap-4 items-center">
           <input
             type="email"
-            placeholder="Your email address"
+            name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
+            onKeyPress={handleKeyPress}
+            placeholder="Your email address"
+            disabled={isLoading}
+            autoComplete="email"
             className="w-full flex-1 rounded-full border border-gray-300 py-2 px-4 text-sm placeholder-gray-500 focus:outline-none focus:border-black"
           />
           <button
-            type="submit"
+            onClick={(e) => {e.preventDefault();
+              handleConnect();
+            }}
+            disabled={isLoading}
             className="bg-black text-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black border border-black transition-colors whitespace-nowrap"
           >
-            Let’s Connect
+            {isLoading ? "Sending..." : "Let's Connect"}
           </button>
         </form>
       </div>

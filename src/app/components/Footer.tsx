@@ -2,14 +2,59 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Github, Facebook, Linkedin } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import toast from "react-hot-toast";
 import FadeIn from "@/app/components/animations/FadeIn";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleConnect = () => {
-    console.log("Email submitted:", email);
-    setEmail("");
+  const handleConnect = async () => {
+    if (!email) {
+      toast.error("Please enter your email address");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error("Please enter a valid email address");
+      return;
+    }
+
+    setIsLoading(true);
+
+    const emailPromise = emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+      {
+        to_email: email,
+        from_name: "John Paul Pacatang",
+        reply_to: "johnpaulpacatang1@gmail.com",
+      },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+    );
+
+    toast.promise(emailPromise, {
+      loading: "Sending welcome email...",
+      success: "Thanks for connecting! Check your email for a welcome message.",
+      error: "Failed to send email. Please try again or contact me directly.",
+    });
+
+    try {
+      await emailPromise;
+      setEmail("");
+    } catch (error) {
+      console.error("EmailJS error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleKeyPress = (e: { key: string }) => {
+    if (e.key === "Enter") {
+      handleConnect();
+    }
   };
 
   return (
@@ -32,10 +77,10 @@ const Footer = () => {
                 <p className="text-base sm:text-lg font-light">
                   <span className="font-medium">Email:</span>{" "}
                   <a
-                    href="mailto:johnpaulpacatangscc@gmail.com"
+                    href="mailto:johnpaulpacatang1@gmail.com"
                     className="hover:underline transition-colors"
                   >
-                    johnpaulpacatangscc@gmail.com
+                    johnpaulpacatang1@gmail.com
                   </a>
                 </p>
                 <p className="text-base sm:text-lg font-light">
@@ -108,21 +153,26 @@ const Footer = () => {
               <p className="text-lg font-semibold mb-4">
                 Let&apos;s Stay in Touch
               </p>
-              <div className="flex flex-col gap-4">
+              <form className="flex flex-col gap-4">
                 <input
                   type="email"
+                  name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  onKeyPress={handleKeyPress}
                   placeholder="Your email address"
-                  className="px-4 py-3 w-full border border-gray-300 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-black/10"
+                  disabled={isLoading}
+                  autoComplete="email"
+                  className="px-4 py-3 w-full text-lg border border-gray-300 rounded-full  focus:outline-none focus:ring-2 focus:ring-black/10 disabled:opacity-50 disabled:cursor-not-allowed"
                 />
                 <button
-                  onClick={handleConnect}
-                  className="bg-black text-white text-sm font-medium px-6 py-3 rounded-full border border-black hover:bg-white hover:text-black transition-colors duration-300"
+                  onClick={(e) => {e.preventDefault();handleConnect();}}
+                  disabled={isLoading}
+                  className="bg-black text-white text-sm font-medium px-6 py-3 rounded-full border border-black hover:bg-white hover:text-black transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-black disabled:hover:text-white"
                 >
-                  Let&apos;s Connect
+                  {isLoading ? "Sending..." : "Let's Connect"}
                 </button>
-              </div>
+              </form>
             </FadeIn>
           </div>
         </div>
